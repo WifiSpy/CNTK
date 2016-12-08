@@ -72,8 +72,8 @@ def find_by_name(node, node_name):
     '''
     result = depth_first_search(node, lambda x: x.name == node_name)
     if len(result)>1:
-        raise ValueError('found multiple functions. If that was expected '
-                ' call find_all_with_name')
+        raise ValueError('found multiple functions matching "%s". '
+                'If that was expected call find_all_with_name'%node_name)
     if not result:
         return None
 
